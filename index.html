@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="vue.js"></script>
+    <script src="vue-router.js"></script>
+    <script src="jquery-3.2.1.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tween.js@16.3.4"></script>
+
+    <link rel="stylesheet" href="component.css">
+    <link rel="stylesheet" href="https://hinesboy.github.io/mavonEditor/dist/markdown/github-markdown.min.css">
+</head>
+<style>
+    .v-enter{
+        opacity: 0;
+    }
+    .v-enter-active{
+        transition:  2s;
+    }
+    .v-enter-to{
+        opacity: 1;
+    }
+    .v-leave{
+        opacity: 1;
+    }
+    .v-leave-active{
+        transition:  2s;
+    }
+    .v-leave-to{
+        opacity: 0;
+    }
+</style>
+<body>
+<div id="app" class="body">
+    <header><router-link to="/">导航</router-link> <router-link to="/git">全局操作</router-link></header>
+    <transition name="v" mode="out-in">
+        <router-view></router-view>
+    </transition>
+
+</div>
+</body>
+<script src="component.js"></script>
+<script src="router.js"></script>
+<script src="app.js"></script>
+</html>
